@@ -1,0 +1,13 @@
+:root {
+    --primary-color-1: #495E57;
+    --primary-color-2: #F4CE14;
+    --secondary-color-1: #EE9972;
+    --secondary-color-2: #FBDABB;
+    --hightlight-color-1: #EDEFEE;
+    --hightlight-color-2: #333333;
+    --rounded-corners: 16px;
+    --subtitle-regular-size: 40pt;
+    --subtitle-medium-size: 18pt;
+    --paragraph-size: 16pt;
+    --paragraph-line-height: 1.5pt;
+}
