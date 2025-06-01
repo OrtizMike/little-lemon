@@ -5,9 +5,11 @@
     --secondary-color-2: #FBDABB;
     --hightlight-color-1: #EDEFEE;
     --hightlight-color-2: #333333;
-    --rounded-corners: 16px;
-    --subtitle-regular-size: 40pt;
-    --subtitle-medium-size: 18pt;
-    --paragraph-size: 16pt;
-    --paragraph-line-height: 1.5pt;
+    --rounded-corners: 1rem;
+    --title-font-size: 3.5rem;
+    --title-line-height: 3.5rem;
+    --subtitle-font-size: 2.5rem;
+    --subtitle-line-height: 2.5rem;
+    --paragraph-font-size: 1.125rem;
+    --paragraph-font-height: 1.125rem;
 }

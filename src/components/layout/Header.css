@@ -43,3 +43,21 @@ header {
     transform: scaleX(1);
     transform-origin: bottom left;
   }
+
+  @media screen and (max-width: 768px) {
+    nav ul {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    nav li {
+      width: 100%;
+      text-align: center;
+    }
+
+    nav a {
+      width: 100%;
+      padding: 15px;
+    }
+
+  }

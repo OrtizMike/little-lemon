@@ -1,0 +1,11 @@
+.special-dishes {
+    padding: 3rem 0;
+}
+
+.dishes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+    padding: 2rem 0;
+    width: 100%;
+}
