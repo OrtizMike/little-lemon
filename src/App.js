@@ -4,7 +4,6 @@ import Header from './components/layout/Header';
 import Landing from './components/Landing';
 import BookingPage from './components/booking/BookingPage';
 import About from './components/pages/About';
-import Services from './components/pages/Services';
 import Menu from './components/pages/Menu';
 import Login from './components/pages/Login';
 import Footer from './components/layout/Footer';
@@ -20,7 +19,6 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Landing />} />
           <Route exact path="/about" element={<About />} />
-          <Route exact path="/services" element={<Services />} />
           <Route exact path="/reservations" element={<BookingPage />} />
           <Route exact path="/our-menu" element={<Menu />} />
           <Route exact path="/login" element={<Login />} />

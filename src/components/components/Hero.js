@@ -6,7 +6,7 @@ const Banner = () => {
   return (
     <section className="hero">
       <div className="container">
-        <div className='content hero-grid'>
+        <div className='hero-grid'>
           <div className="hero-content">
             <h1 className='title'>Little Lemon</h1>
             <p className='subtitle'>Chicago</p>

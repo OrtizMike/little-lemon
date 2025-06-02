@@ -1,4 +1,4 @@
-.special-dishes {
+.special-dishes.container {
     padding: 3rem 0;
 }
 
@@ -8,4 +8,10 @@
     gap: 20px;
     padding: 2rem 0;
     width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .special-dishes.container{
+      padding: 3rem 1.5rem;
+    }
 }

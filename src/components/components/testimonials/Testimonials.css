@@ -61,3 +61,9 @@
     color: #444;
     margin-bottom: 20px;
   }
+
+  @media screen and (max-width: 768px) {
+    .testimonials{
+      padding: 3rem 1.5rem;
+    }
+}
