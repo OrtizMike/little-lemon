@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Header from './components/layout/Header';
 import Landing from './components/Landing';
 import BookingPage from './components/booking/BookingPage';
+import ConfirmedBooking from './components/booking/ConfirmedBooking';
 import About from './components/pages/About';
 import Menu from './components/pages/Menu';
 import Login from './components/pages/Login';
@@ -21,7 +22,8 @@ function App() {
           <Route exact path="/about" element={<About />} />
           <Route exact path="/reservations" element={<BookingPage />} />
           <Route exact path="/our-menu" element={<Menu />} />
-          <Route exact path="/login" element={<Login />} />
+          {/* <Route exact path="/login" element={<Login />} /> */}
+          <Route exact path="/ConfirmedBooking" element={<ConfirmedBooking />} />
         </Routes>
       </main>
       <Footer />

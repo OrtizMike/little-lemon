@@ -45,6 +45,12 @@
     outline: none;
 }
 
+.form-error {
+    color: red;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
 input[type="submit"] {
     margin-top: 2rem;
     width: 250px;
