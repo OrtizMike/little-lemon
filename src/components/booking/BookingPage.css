@@ -90,3 +90,8 @@ input[type="submit"] {
         width: 100%;
     }
 }
+
+.confirmed-booking.container {
+    padding: 5rem 0;
+    text-align: center;
+}

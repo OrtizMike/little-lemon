@@ -10,9 +10,9 @@ const BookingForm = ({
 
     const minimumDate = new Date().toISOString().split("T")[0];
     const defaultTime = availableTimes[0];
+    const ocassions = ["Birthday", "Gather with Friends", "Anniversary"];
 
     const handleDateChange = (e) => {
-        console.log("Date changed to:", e.target.value);
         dispatchOnDateChange(e.target.value);
     };
 
@@ -21,19 +21,20 @@ const BookingForm = ({
           date: minimumDate,
           time: defaultTime,
           guests: 1,
-          ocassion: "",
+          occasion: "Birthday",
         },
         onSubmit: (values) => {
             submitData(values);
         },
         validationSchema: Yup.object({
-            date: Yup.date().required("Date is required"),
+            date: Yup.date().required("Date is required")
+                .min(minimumDate, "Date is too early"),
             time: Yup.string().required("Time is required"),
             guests: Yup.number()
                 .min(1, "At least 1 guest is required")
                 .max(10, "Maximum of 10 guests allowed")
                 .required("Number of guests is required"),
-            occasion: Yup.string().required("Occasion is required"),
+            occasion: Yup.string().required("Occasion is required")
         }),
       });
 
@@ -75,12 +76,14 @@ const BookingForm = ({
                 </div>
                 <div className='form-group'>
                     <label htmlFor="occasion">Occasion</label>
-                    <select id="occasion" name='occasion' {...formik.getFieldProps("ocassion")} >
-                        <option>Birthday</option>
-                        <option>Gather with Friends</option>
-                        <option>Anniversary</option>
+                    <select id="occasion" name='occasion' {...formik.getFieldProps("occasion")} >
+                        {ocassions.map((occasion) => (
+                            <option key={occasion} value={occasion}>
+                                {occasion}
+                            </option>
+                        ))}
                     </select>
-                    <span className='form-error'>{formik.errors.ocassion}</span>
+                    <span className='form-error'>{formik.errors.occasion}</span>
                 </div>
                 <input type="submit" value="Reserve Now!" className='btn btn-primary' />
             </form>
