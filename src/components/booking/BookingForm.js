@@ -45,7 +45,7 @@ const BookingForm = ({
             <p className='paragraph'>Fill in the form below to book a table</p>
         </div>
         <div className='reservation-form'>
-            <form onSubmit={formik.handleSubmit}>
+            <form role='form' onSubmit={formik.handleSubmit}>
                 <div className='form-group'>
                     <label htmlFor="res-date">Choose date</label>
                     <input
@@ -56,23 +56,23 @@ const BookingForm = ({
                         {...formik.getFieldProps("date")}
                         onBlur={handleDateChange}
                     />
-                    <span className='form-error'>{formik.errors.date}</span>
+                    <span role='date-error' className='form-error'>{formik.errors.date}</span>
                 </div>
                 <div className='form-group'>
                     <label htmlFor="res-time">Choose time</label>
-                    <select id="res-time " name='time' {...formik.getFieldProps("time")} >
+                    <select role="res-time " name='time' {...formik.getFieldProps("time")} >
                         {availableTimes.map((times) => (
                             <option key={times} data-testid="reservation-time-option">
                                 {times}
                             </option>
                         ))}
                     </select>
-                    <span className='form-error'>{formik.errors.time}</span>
+                    <span id='time-error' className='form-error'>{formik.errors.time}</span>
                 </div>
                 <div className='form-group'>
                     <label htmlFor="guests">Number of guests</label>
                     <input type="number" placeholder="1" min="1" max="10" id="guests" name='guests' {...formik.getFieldProps("guests")} />
-                    <span className='form-error'>{formik.errors.guests}</span>
+                    <span role='guests-error' className='form-error'>{formik.errors.guests}</span>
                 </div>
                 <div className='form-group'>
                     <label htmlFor="occasion">Occasion</label>
@@ -83,9 +83,16 @@ const BookingForm = ({
                             </option>
                         ))}
                     </select>
-                    <span className='form-error'>{formik.errors.occasion}</span>
+                    <span role='occasion-error' className='form-error'>{formik.errors.occasion}</span>
                 </div>
-                <input type="submit" value="Reserve Now!" className='btn btn-primary' />
+                <input 
+                    type="submit"
+                    role='button'
+                    name='submit'
+                    value="Reserve Now!"
+                    className='btn btn-primary' 
+                    disabled={!formik.isValid || formik.isSubmitting}
+                />
             </form>
         </div>
     </>
