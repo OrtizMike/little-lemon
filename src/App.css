@@ -55,13 +55,13 @@ h1, h2, h3 {
 }
 
 .btn-primary:hover {
-  background-color: var(--primary-color-1);
+  background-color: var(--hightlight-color-2);
   color: #ffffff;
   cursor: pointer;
 }
 
 .btn-primary:disabled {
-  background-color: var(--hightlight-color-2);
+  background-color: rgba(0, 0, 0, 0.5);
   color: #FFF;
   cursor: pointer;
 }
