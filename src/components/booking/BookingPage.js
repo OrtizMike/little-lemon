@@ -1,27 +1,26 @@
 import React from 'react'
 import { useReducer } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { fetchAPI, submitAPI } from "../../utils/mockAPI";
 import BookingForm from './BookingForm';
-import { useNavigate } from 'react-router-dom';
-import './BookingPage.css'; 
+import './BookingPage.css';
 
-const BookingPage = () => {
+const updateTimes = (availableTimes, date) => {
+  const response = fetchAPI(new Date(date));
+  return response.length !== 0 ? response : availableTimes;
+};
 
-  const updateTimes = (availableTimes, date) => {
-    const response = fetchAPI(new Date(date));
-    return response.length !== 0 ? response : availableTimes;
-  };
+const initializeTimes = (initialAvailableTimes) => [
+  ...initialAvailableTimes,
+  ...fetchAPI(new Date()),
+];
 
-  const initializeTimes = (initialAvailableTimes) => [
-    ...initialAvailableTimes,
-    ...fetchAPI(new Date()),
-  ];
-
+const BookingPage = () => { 
   const [availableTimes, dispatchOnDateChange] = useReducer(
     updateTimes,
     [],
     initializeTimes
-  );
+    );
 
   const navigate = useNavigate();
 

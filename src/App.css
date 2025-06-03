@@ -55,8 +55,14 @@ h1, h2, h3 {
 }
 
 .btn-primary:hover {
-  background-color: #495e57;
+  background-color: var(--primary-color-1);
   color: #ffffff;
+  cursor: pointer;
+}
+
+.btn-primary:disabled {
+  background-color: var(--hightlight-color-2);
+  color: #FFF;
   cursor: pointer;
 }
 

@@ -5,9 +5,7 @@ import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = () => {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
-  const toggleNav = () => {
-    setIsNavExpanded(!isNavExpanded);
-  };
+
   return (
     <nav>
       <button
